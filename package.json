@@ -40,7 +40,6 @@
       "last 1 safari version"
     ]
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -52,7 +51,6 @@
       "git add"
     ]
   },
-
   "devDependencies": {
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
