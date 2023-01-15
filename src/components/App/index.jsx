@@ -1,7 +1,8 @@
-  import React from 'react';
+import React from 'react';
 
 function App() {
-    return <div />;
+  const bar = 5;
+  return <div />;
 }
 
 export default App;
