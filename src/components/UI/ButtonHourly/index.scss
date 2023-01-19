@@ -1,0 +1,27 @@
+@import '../../../statics/variables/index.scss';
+
+.button-hourly {
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  background: #616161;
+  color: $white-color;
+  border-radius: 3px;
+  width: 100px;
+  height: 44px;
+  outline: 0;
+  border: 0;
+}
+
+.button-hourly:hover {
+  border: $white-color solid 2px;
+}
+
+@media all and (max-width: 670px) {
+  .button-hourly {
+    width: 80px;
+    height: 36px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../statics//variables/index.scss';
+.main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: $white-color;
+  font-size: 58px;
+  font-family: $font-h3;
+  margin-top: 45px;
+  width: 75%;
+  height: 80%;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(14, 14, 14, 1);
+  background-image: url(../../statics/assets/images/main-background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: 50px;
+}
+
+//Adaptive
+@media (max-width: 1400px) {
+  .main {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 760px) {
+  .main {
+    height: 80%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-height: 740px) {
+  .main {
+    margin-bottom: 20px;
+  }
+}
