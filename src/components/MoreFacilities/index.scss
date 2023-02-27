@@ -1,0 +1,127 @@
+@import '../../statics/variables/index.scss';
+.more-facilities {
+  right: 37px;
+  top: 30%;
+  font-family: $font-h4;
+  font-size: 21px;
+  color: $white-color;
+  position: absolute;
+  &__item:hover {
+    scale: 1.1;
+  }
+  &__item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .more-facilities-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 220px;
+    width: 160px;
+    border-radius: 6px;
+    background: #272424b9;
+  }
+}
+
+//Adaptive
+
+@media screen and (max-width: 1800px) {
+  .more-facilities {
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .more-facilities {
+    right: 25px;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .more-facilities {
+    right: 35px;
+    font-size: 18px;
+    &__item {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .more-facilities-container {
+      height: 180px;
+      width: 140px;
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .more-facilities {
+    right: 27.5px;
+  }
+}
+
+@media screen and (max-width: 1460px) {
+  .more-facilities {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .more-facilities {
+    font-size: 18px;
+    &__item {
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    .more-facilities-container {
+      height: 165px;
+      width: 130px;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .more-facilities {
+    right: 11px;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .more-facilities {
+    right: auto;
+    left: auto;
+    top: 17px;
+    .more-facilities-container {
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      height: 86px;
+      width: 230px;
+      border-radius: 6px;
+      background: #272424b9;
+    }
+  }
+}
+
+@media all and (max-width: 760px) {
+  .more-facilities {
+    font-size: 16px;
+    &__item:hover {
+      scale: 1;
+    }
+    .more-facilities-container {
+      height: 76px;
+      width: 190px;
+      border-radius: 5px;
+    }
+  }
+}

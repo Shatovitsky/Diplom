@@ -1,0 +1,22 @@
+.search {
+  display: flex;
+  margin-top: 40px;
+}
+
+//Adaptive
+
+@media all and (max-width: 1200px) {
+  .search {
+    position: absolute;
+    top: 120px;
+    align-self: center;
+  }
+}
+
+@media all and (max-width: 670px) {
+  .search {
+    position: absolute;
+    top: 100px;
+    align-self: center;
+  }
+}
