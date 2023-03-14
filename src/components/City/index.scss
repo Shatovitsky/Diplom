@@ -1,0 +1,64 @@
+@import '../..//statics/variables/index.scss';
+.site {
+  align-self: center;
+  color: $white-color;
+  &__city {
+    font-size: 42px;
+  }
+  &__country-prefix {
+    float: right;
+    font-family: $font-h4;
+    font-size: 32px;
+  }
+}
+
+//Adaptive
+// Устройства XX-Large (большие настольные компьютеры, 1400 пикселей и выше)
+@media screen and (max-width: 1600px) {
+  .site {
+    &__city {
+      font-size: 36px;
+    }
+    &__country-prefix {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .site {
+    align-self: flex-end;
+    padding-bottom: 14px;
+  }
+}
+
+@media all and(max-width: 760px) {
+  .site {
+    padding-bottom: 10px;
+    &__city {
+      font-size: 28px;
+    }
+    &__country-prefix {
+      font-size: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 670px) {
+  .site {
+    padding-top: 90px;
+    align-self: center;
+  }
+}
+
+@media all and(max-width: 520px) {
+  .site {
+    padding-top: 105px;
+    &__city {
+      font-size: 22px;
+    }
+    &__country-prefix {
+      font-size: 17px;
+    }
+  }
+}

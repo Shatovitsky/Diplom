@@ -1,0 +1,43 @@
+@import '../../../statics/variables/index.scss';
+
+input {
+  font-family: $font-h3;
+  font-size: 18px;
+  width: 200px;
+  height: 42px;
+  padding-left: 10px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  background: #272424;
+  color: $white-color;
+}
+input:focus {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: $white-color;
+}
+
+@media all and (max-width: 1200px) {
+  input {
+    background: #2724248e;
+    border: 2px solid #1b1b1b;
+    border-radius: 5px;
+    width: 160px;
+    font-size: 16px;
+  }
+  input:focus {
+    background: #272424;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: $white-color;
+  }
+}
+
+@media all and (max-width: 760px) {
+  input {
+    width: 120px;
+    height: 32px;
+  }
+}

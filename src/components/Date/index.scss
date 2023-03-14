@@ -1,0 +1,69 @@
+@import '../../statics/variables/index.scss';
+.date {
+  align-self: center;
+  font-family: $font-h3;
+  color: $white-color;
+  &__time {
+    font-size: 64px;
+  }
+  &__more {
+    padding-top: 5px;
+    font-family: $font-h4;
+    font-size: 36px;
+  }
+}
+
+//Adaptive
+@media screen and (max-width: 1600px) {
+  .date {
+    &__time {
+      font-size: 54px;
+    }
+    &__more {
+      font-size: 26px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .date {
+    margin-top: 40px;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .date {
+    margin-top: 130px;
+  }
+}
+
+@media all and(max-width: 760px) {
+  .date {
+    &__time {
+      font-size: 38px;
+    }
+    &__more {
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .date {
+    margin-top: 80px;
+    align-self: center;
+  }
+}
+
+@media all and(max-width: 520px) {
+  .date {
+    margin-top: 100px;
+    &__time {
+      font-size: 32px;
+    }
+    &__more {
+      font-size: 20px;
+    }
+  }
+}
