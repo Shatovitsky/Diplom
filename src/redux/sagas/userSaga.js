@@ -6,12 +6,17 @@ import { FETCH_USERS } from '../../constants';
 import { Succeeded } from '../actions/weather';
 
 function* fetchUserWorker() {
-  const position = yield call(test);
-  console.log(position);
-  /* const weatherData = yield call(getDataWeather);
-  yield put(Succeeded(weatherData));
-  console.log(weatherData); */
+  try {
+    const position = yield call(test);
+    console.log('position', position);
+    const weatherData = yield call(getDataWeather, position.coords);
+    yield put(Succeeded(weatherData));
+    console.log(weatherData);
+  } catch (e) {
+    console.log(e);
+  }
 }
+
 function* userWatcher() {
   yield takeEvery(FETCH_USERS, fetchUserWorker);
 }
