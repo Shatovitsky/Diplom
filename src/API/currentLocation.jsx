@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+import { URL_WEATHER } from '../constants';
+
 function GetCurrentLocation() {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
@@ -8,7 +10,7 @@ function GetCurrentLocation() {
   const getLocation = async () => {
     const location = await axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ca92d5d554730b0689860ca54b0d5b7f`,
+        `${URL_WEATHER}weather?lat=${latitude}&lon=${longitude}&appid=ca92d5d554730b0689860ca54b0d5b7f`,
       )
       .then((response) => {
         setCurrLocation(response.data);
@@ -20,8 +22,6 @@ function GetCurrentLocation() {
       setLongitude(position.coords.longitude);
     });
     getLocation();
-    console.log(currLocation);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 }
 

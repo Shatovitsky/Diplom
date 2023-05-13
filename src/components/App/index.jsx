@@ -1,27 +1,27 @@
-/* eslint-disable react/button-has-type */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUsers } from '../../redux/actions/weather';
+import { fetchWeatherData } from '../../redux/actions/weather';
+import setBackgroundMainImage from '../../utils/setBackgroundMainImage';
 import MainContent from '../MainContent';
 import MoreFacilities from '../MoreFacilities';
 import Search from '../Search';
-
 import './index.scss';
 
 function App() {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users.data);
-  console.log('data:', users);
+  const nameWeather = useSelector((state) => state.searchData.nameWeather);
+  const backgroundImage = setBackgroundMainImage(nameWeather);
+
   useEffect(() => {
-    dispatch(fetchUsers());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    dispatch(fetchWeatherData());
   }, []);
+
   return (
-    <div className='wrapper'>
-      <button className='btn' onClick={() => dispatch(fetchUsers())}>
-        ПОЛУЧИТЬ
-      </button>
+    <div
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className='wrapper'
+    >
       <Search />
       <MainContent />
       <MoreFacilities />

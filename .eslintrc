@@ -11,7 +11,20 @@
     "prettier"
   ],
   "plugins": ["prettier"],
+
   "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "react/no-array-index-key": "off",
+    "no-undef": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-return-await": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "no-use-before-define": "off",
+    "react/button-has-type": "off",
+    "camelcase": ["error", { "properties": "never" }],
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
     "no-shadow": "off",
     "no-return-assign": "off",
     "default-param-last": "off",

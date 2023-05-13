@@ -12,10 +12,10 @@ input {
   background: #272424;
   color: $white-color;
 }
+.search {
+  margin-top: 40px;
+}
 input:focus {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: $white-color;
 }
 
 @media all and (max-width: 1200px) {

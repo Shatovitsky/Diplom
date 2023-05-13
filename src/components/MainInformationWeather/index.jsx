@@ -1,67 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import threeIcon from '../../statics/assets/icons/3.svg';
-import rainIcon from '../../statics/assets/icons/rain.svg';
-import sunnyIcon from '../../statics/assets/icons/sunny.svg';
+import DailyInformation from '../DailyInformation';
+import HourlyInformation from '../HourlyInformation';
 import ButtonDaily from '../UI/ButtonDaily';
 import ButtonHourly from '../UI/ButtonHourly';
-
 import './index.scss';
 
 function MainInformationWeather() {
+  const tempToday = useSelector((state) => state.searchData.temp);
+  const mainImage = useSelector((state) => state.searchData.image);
+  const data = useSelector((state) => state.weather.today);
+
+  const [weatherComponent, setWeatherComponent] = useState('hourly');
   return (
     <div className='inforamtion-weather-now'>
       <div className='container'>
         <ul className='weather-week'>
           <li className='weather-week__today'>
-            <img
-              className='weather-week__day_main-icon'
-              src={sunnyIcon}
-              alt=''
-            />
+            {data.weather && (
+              <img
+                className='weather-week__day_main-icon'
+                alt=''
+                src={`https://openweathermap.org/img/wn/${mainImage}@2x.png`}
+              />
+            )}
             <div className='weather-week__day_container'>
               <div className='weather-week__day_main-name'>TODAY</div>
-              <h3 className='weather-week__day_main-degree'>1°</h3>
+              <h3 className='weather-week__day_main-degree'>
+                {Math.round(tempToday)}°
+              </h3>
             </div>
           </li>
-          <li className='weather-week-container'>
-            <li className='weather-week__day'>
-              <div className='weather-week__day_name'>WED</div>
-              <img className='weather-week__day_icon' src={rainIcon} alt='' />
-              <h3 className='weather-week__day_degree'>-4°</h3>
-            </li>
-            <li className='weather-week__day'>
-              <div className='weather-week__day_name'>THU</div>
-              <img className='weather-week__day_icon' src={sunnyIcon} alt='' />
-              <h3 className='weather-week__day_degree'>4°</h3>
-            </li>
-            <li className='weather-week__day'>
-              <div className='weather-week__day_name'>FRI</div>
-              <img className='weather-week__day_icon' src={rainIcon} alt='' />
-              <h3 className='weather-week__day_degree'>9°</h3>
-            </li>
-            <li className='weather-week__day'>
-              <div className='weather-week__day_name'>SAT</div>
-              <img className='weather-week__day_icon' src={threeIcon} alt='' />
-              <h3 className='weather-week__day_degree'>0°</h3>
-            </li>
-            <li className='weather-week__day'>
-              <div className='weather-week__day_name'>SUN</div>
-              <img className='weather-week__day_icon' src={sunnyIcon} alt='' />
-              <h3 className='weather-week__day_degree'>2°</h3>
-            </li>
-            <li className='weather-week__day'>
-              <div className='weather-week__day_name'>MON</div>
-              <img className='weather-week__day_icon' src={sunnyIcon} alt='' />
-              <h3 className='weather-week__day_degree'>-18°</h3>
-            </li>
-          </li>
-          <li className='weather-week__buttons'>
-            <ButtonDaily />
-            <ButtonHourly />
-          </li>
+          {weatherComponent === 'hourly' ? (
+            <HourlyInformation />
+          ) : (
+            <DailyInformation />
+          )}
         </ul>
       </div>
+      <li className='weather-week__buttons'>
+        <button
+          type='button'
+          className='button-daily'
+          onClick={() => setWeatherComponent('daily')}
+        >
+          Daily
+        </button>
+        <button
+          className='button-hourly'
+          type='button'
+          onClick={() => setWeatherComponent('hourly')}
+        >
+          Hourly
+        </button>
+      </li>
     </div>
   );
 }

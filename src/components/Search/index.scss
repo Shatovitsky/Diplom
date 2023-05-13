@@ -1,11 +1,71 @@
-.search {
+.container-for-seacrh {
   display: flex;
+}
+.container-for-search.error {
+  background-color: #272424;
+  width: 200px;
+  height: 200px;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.result {
+  background-color: rgba(255, 255, 255, 0.527);
+  position: absolute;
+  width: 210px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  li {
+    padding: 5px 5px 1px 5px;
+  }
+  li:hover {
+    background-color: #272424;
+    color: white;
+  }
+}
+
+.close-button {
+  margin-left: 182px;
   margin-top: 40px;
+  align-self: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:before,
+.close-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  background-color: #616161;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-button:hover:before,
+.close-button:hover:after {
+  background-color: white;
 }
 
 //Adaptive
 
 @media all and (max-width: 1200px) {
+  .container-for-seacrh {
+    justify-content: center;
+    width: 750px;
+  }
   .search {
     position: absolute;
     top: 120px;

@@ -1,11 +1,15 @@
 import { combineReducers } from 'redux';
 
-import currentLocationReducer from './currentLocationReducer';
-import userReducer from './weatherReducer';
+import hourlyWeatherReducer from './hourlyWeatherReducer';
+import searchWeatherDataReducer from './searchWeatherDataReducer';
+import weatherDataReducer from './weatherDataReducer';
+import weeklyWeatherReducer from './weeklyWeatherReducer';
 
 const rootReducer = combineReducers({
-  users: userReducer,
-  navigator: currentLocationReducer,
+  weather: weatherDataReducer,
+  weeklyWeather: weeklyWeatherReducer,
+  hourlyWeather: hourlyWeatherReducer,
+  searchData: searchWeatherDataReducer,
 });
 
 export default rootReducer;
